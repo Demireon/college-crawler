@@ -21,14 +21,8 @@ This project is a web scraper built with Node.js and Puppeteer that extracts col
 
 ## Installation
 
-1. **Clone the repository**
 
-   ```bash
-   git clone https://github.com/yourusername/college-scraper.git
-   cd college-scraper
-   ```
-
-2. **Install dependencies**
+1. **Install dependencies**
 
    ```bash
    npm install

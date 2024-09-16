@@ -1,12 +1,12 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 // Log file path
-const logFilePath = path.join(__dirname, '../logs/scraper.log');
+const logFilePath = path.join(__dirname, "../logs/scraper.log");
 
 // Clear the log file at the start of each run
 function clearLogFile() {
-  fs.writeFileSync(logFilePath, '');
+  fs.writeFileSync(logFilePath, "");
 }
 
 // Log messages with different levels (info, error, etc.)

@@ -1,12 +1,12 @@
-const puppeteer = require('puppeteer');
-const { connectDB, clearDatabase } = require('./db/mongodb');
-const { runScraper } = require('./scraper/index');
-const { logMessage } = require('./scraper/helpers');
-const mongoose = require('mongoose'); // Ensure mongoose is imported to close the connection later
+const puppeteer = require("puppeteer");
+const { connectDB, clearDatabase } = require("./db/mongodb");
+const { runScraper } = require("./scraper/index");
+const { logMessage } = require("./scraper/helpers");
+const mongoose = require("mongoose");
 
 (async () => {
   try {
-    logMessage('info', 'Starting scraper...');
+    logMessage("info", "Starting scraper...");
 
     // Connect to MongoDB
     await connectDB();
@@ -15,21 +15,21 @@ const mongoose = require('mongoose'); // Ensure mongoose is imported to close th
     await clearDatabase();
 
     // Launch Puppeteer browser
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({ headless: false }); // headless is false for testing purposes
     const page = await browser.newPage();
 
     // Run the scraper
     await runScraper(page);
 
-    logMessage('info', 'Scraper finished successfully');
+    logMessage("info", "Scraper finished successfully");
 
     // Close the browser
     await browser.close();
 
     // Close MongoDB connection
     await mongoose.connection.close();
-    logMessage('info', 'Closed MongoDB connection');
+    logMessage("info", "Closed MongoDB connection");
   } catch (error) {
-    logMessage('error', `An error occurred: ${error.message}`);
+    logMessage("error", `An error occurred: ${error.message}`);
   }
 })();

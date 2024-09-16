@@ -51,7 +51,7 @@ This project is a web scraper built with Node.js and Puppeteer that extracts col
    Ensure that your MongoDB server is running. If installed locally, you can start it with:
 
    ```bash
-   mongod
+   mongosh
    ```
 
 2. **Run the scraper**

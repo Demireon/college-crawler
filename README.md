@@ -15,8 +15,7 @@ This project is a web scraper built with Node.js and Puppeteer that extracts col
 
 ## Prerequisites
 
-- **Node.js** (version 12 or higher)
-- **npm** (comes with Node.js)
+- **Node.js**
 - **MongoDB** (running locally or accessible via URI)
 
 ## Installation
